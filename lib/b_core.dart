@@ -1,7 +1,8 @@
 library b_core;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'device.dart';
+export 'cache/cacheable.dart';
+export 'shared_preference/sp_utils.dart';
+export 'web_view/page.dart';
+export 'extensions/widget/widget_extensions.dart';
+export 'validator/validator.dart';
