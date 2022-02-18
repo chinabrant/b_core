@@ -11,9 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: ^0.5.12+4
+  shared_preferences:
   webview_flutter: ^1.0.7
-  crypto: ^2.0.6
+  crypto:
 
 dev_dependencies:
   flutter_test:
