@@ -5,7 +5,10 @@ import 'package:webview_flutter/webview_flutter.dart';
 class WebPage extends StatefulWidget {
   final String url;
   final String title;
-  WebPage({this.url, this.title});
+  WebPage({
+    required this.url,
+    this.title = '',
+  });
   @override
   State<StatefulWidget> createState() {
     return _WebPageState();
