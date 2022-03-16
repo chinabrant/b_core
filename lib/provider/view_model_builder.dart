@@ -7,6 +7,7 @@ class ViewModelBuilder<T extends ChangeNotifier> extends StatefulWidget {
     required this.builder,
     required this.viewModelBuilder,
     this.watch = true,
+    this.child,
   }) : super(key: key);
 
   final bool watch;
@@ -15,6 +16,8 @@ class ViewModelBuilder<T extends ChangeNotifier> extends StatefulWidget {
       builder;
 
   final T Function() viewModelBuilder;
+
+  final Widget? child;
 
   @override
   _ViewModelBuilderState<T> createState() => _ViewModelBuilderState<T>();
@@ -36,14 +39,14 @@ class _ViewModelBuilderState<T extends ChangeNotifier>
     if (!widget.watch) {
       return ChangeNotifierProvider<T>.value(
         value: viewModel!,
-        child: widget.builder(context, viewModel!, null),
+        child: widget.builder(context, viewModel!, widget.child),
       );
     }
 
     return ChangeNotifierProvider<T>(
       create: (context) => viewModel!,
       child: Consumer<T>(builder: (context, value, child) {
-        return widget.builder(context, value, child);
+        return widget.builder(context, value, widget.child);
       }),
     );
   }
