@@ -1,5 +1,5 @@
+import 'package:b_core/theme/app_color.dart';
 import 'package:flutter/material.dart';
-import 'package:life_wiki/core/theme/app_color.dart';
 
 final AppColor whiteColor = AppColor(
   remarksText: const Color(0xFFB9B9B9),
