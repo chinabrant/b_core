@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   shared_preferences:
-  webview_flutter: ^1.0.7
+  # webview_flutter: ^1.0.7
   crypto:
   hive:
   provider:

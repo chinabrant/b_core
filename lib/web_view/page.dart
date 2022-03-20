@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/platform_interface.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+// import 'package:webview_flutter/platform_interface.dart';
+// import 'package:webview_flutter/webview_flutter.dart';
 
 class WebPage extends StatefulWidget {
   final String url;
@@ -24,19 +24,20 @@ class _WebPageState extends State<WebPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 1,
-        title: Text(widget.title),
-      ),
-      body: WebView(
-          initialUrl: widget.url,
-          javascriptMode: JavascriptMode.unrestricted,
-          onPageFinished: (content) {
-            print('WebPage: finished: $content');
-          },
-          onWebResourceError: (WebResourceError error) {
-            print('WebPage: onWebResourceError: ${error.description}');
-          }),
-    );
+        appBar: AppBar(
+          elevation: 1,
+          title: Text(widget.title),
+        ),
+        body: Container()
+        // WebView(
+        //     initialUrl: widget.url,
+        //     javascriptMode: JavascriptMode.unrestricted,
+        //     onPageFinished: (content) {
+        //       print('WebPage: finished: $content');
+        //     },
+        //     onWebResourceError: (WebResourceError error) {
+        //       print('WebPage: onWebResourceError: ${error.description}');
+        //     }),
+        );
   }
 }
