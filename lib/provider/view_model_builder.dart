@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/scheduler.dart';
 
+import 'base_view_model.dart';
+
 /// 初始化ViewModel，同时监听数据变化
-class ViewModelBuilder<T extends ChangeNotifier> extends StatefulWidget {
+class ViewModelBuilder<T extends BaseViewModel> extends StatefulWidget {
   ViewModelBuilder({
     Key? key,
     required this.builder,
@@ -34,7 +36,7 @@ class ViewModelBuilder<T extends ChangeNotifier> extends StatefulWidget {
   _ViewModelBuilderState<T> createState() => _ViewModelBuilderState<T>();
 }
 
-class _ViewModelBuilderState<T extends ChangeNotifier>
+class _ViewModelBuilderState<T extends BaseViewModel>
     extends State<ViewModelBuilder<T>> {
   T? viewModel;
 
