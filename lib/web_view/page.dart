@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:webview_flutter/platform_interface.dart';
 // import 'package:webview_flutter/webview_flutter.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 class WebPage extends StatefulWidget {
   final String url;
@@ -28,16 +29,8 @@ class _WebPageState extends State<WebPage> {
           elevation: 1,
           title: Text(widget.title),
         ),
-        body: Container()
-        // WebView(
-        //     initialUrl: widget.url,
-        //     javascriptMode: JavascriptMode.unrestricted,
-        //     onPageFinished: (content) {
-        //       print('WebPage: finished: $content');
-        //     },
-        //     onWebResourceError: (WebResourceError error) {
-        //       print('WebPage: onWebResourceError: ${error.description}');
-        //     }),
-        );
+        body: InAppWebView(
+          initialUrlRequest: URLRequest(url: Uri.parse(widget.url)),
+        ));
   }
 }
